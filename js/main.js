@@ -6,7 +6,6 @@ var newFilmsResult =new DocumentFragment();
 var index = 8
 
 
-
 function renderFilms(films){
 
     elFilmsResults.innerHTML = null;
@@ -18,6 +17,7 @@ function renderFilms(films){
       cloneFilms.querySelector('.film-img').src = films[i].poster
       cloneFilms.querySelector('.film-title').textContent = films[i].title
       cloneFilms.querySelector('.film-ganres').textContent = films[i].genres.join(', ')
+      cloneFilms.querySelector('.info-btn').dataset.dataId = films[i].id;
 
       newFilmsResult.appendChild(cloneFilms);
   }
@@ -28,6 +28,7 @@ function renderFilms(films){
 
 renderFilms(films)
 
+
 var elMoreBtn = document.querySelector('.more-btn');
 
 elMoreBtn.addEventListener('click', () => {
@@ -36,3 +37,10 @@ elMoreBtn.addEventListener('click', () => {
     renderFilms(films)
     
 });
+
+
+
+
+
+
+

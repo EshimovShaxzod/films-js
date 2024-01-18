@@ -9,18 +9,29 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+
+    <div class="container">
+        <div class="row mt-5">
+            <form class="film-form">
+                <input class="form-control py-2 search-input" type="search" aria-label="Search film name" placeholder="Film name..">
+            </form>
+        </div>
+    </div>
     
     <div class="container">
         <div class="row film-results my-5">
-
-
+            
+            <form class="form-control">
+                <input class="form-control search-input" type="search">
+            </form>
+            
             <div class="loading">
                 <img src="./img/loading.svg" alt="loading...">
             </div>
             
         </div>
         <button class="btn btn-primary w-25 more-btn">More</button>
-
+        
         
     </div>
     
@@ -33,14 +44,42 @@
                     <p class="film-ganres"></p>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary w-100">More info</button>
+                    <button class="btn btn-primary w-100 info-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">More info</button>
                 </div>
             </div>
         </div>
     </template>
     
+    <!-- MODAL START -->
+    <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-film-title"></h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row film-content col-md-12">
+                        <div class="col-md-12 col-lg-5 col-xl-5">
+                            <img class="modal-film-img" src="" alt="">
+                        </div>
+                        <div class="col-md-12 col-lg-6 col-xl-5 d-flex flex-column">
+                            
+                                <p class="modal-film-owerview"></p>
+                                <p class="film-movie-category mb-1"></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MODAL END -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/films.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/filter-film.js"></script>
 </body>
 </html>
